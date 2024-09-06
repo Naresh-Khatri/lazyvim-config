@@ -10,6 +10,19 @@ local opts = { noremap = true, silent = true }
 -- Shortcut for setting keymaps
 local keymap = vim.api.nvim_set_keymap
 
+-- Allow telescope searching from terminal window
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.api.nvim_buf_set_keymap(
+      0,
+      "t",
+      "<C-p>",
+      "<C-\\><C-n><cmd>Telescope find_files<CR>",
+      { noremap = true, silent = true }
+    )
+  end,
+})
+
 -- Modes
 -- normal_mode = "n",
 -- insert_mode = "i",
@@ -24,19 +37,11 @@ keymap("n", "<C-s>", ":w<CR>", opts) -- Save with Ctrl + S
 -- override default keymaps
 keymap("n", "s", "cl", opts) -- Save with Ctrl + S
 
--- Toggle Terminal
-keymap("n", "<`>", ":ToggleTerm<CR>", opts)
-
 -- Code Folding
 keymap("n", "<leader>}", "zc", opts)
 keymap("n", "<leader>{", "zo", opts)
 
 -- Close buffer
--- keymap("n", "<C-w>", ":bd|bp #<CR>", opts)
--- keymap("n", "<C-w>", ":bd<CR>:bp<CR>", opts)
 keymap("n", "<C-w>", ":bd<cr>", opts)
--- Navigate buffers
--- keymap("n", "<C-n>", ":bnext<CR>", opts)
--- keymap("n", "<C-N>", ":bprevious<CR>", opts)
 
 keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
