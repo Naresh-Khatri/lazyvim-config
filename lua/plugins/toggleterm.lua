@@ -1,9 +1,10 @@
 return {
   "akinsho/toggleterm.nvim",
+  version = "*",
   config = function()
     require("toggleterm").setup({
-      -- size = 20,
-      open_mapping = [[<C-t>]], -- Use Ctrl + t to toggle
+      size = 30,
+      open_mapping = [[<C-`>]], -- Use Ctrl + t to toggle
       -- hide_numbers = true, -- Hide line numbers in terminal
       -- shade_filetypes = {},
       -- shade_terminals = true,
