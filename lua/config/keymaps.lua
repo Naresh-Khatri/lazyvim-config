@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 keymap("n", "<C-s>", ":w<CR>", opts) -- Save with Ctrl + S
 
 -- override default keymaps
-keymap("n", "s", "cl", opts) -- Save with Ctrl + S
+keymap("n", "s", "cl", opts)
 
 -- Code Folding
 keymap("n", "<leader>}", "zc", opts)
