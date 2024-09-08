@@ -22,6 +22,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     )
   end,
 })
+--
 -- Modes
 -- normal_mode = "n",
 -- insert_mode = "i",
@@ -39,6 +40,10 @@ keymap("n", "<C-s>", ":w<CR>", opts) -- Save with Ctrl + S
 
 -- override default keymaps
 keymap("n", "s", "cl", opts)
+
+-- multi cursor stuff
+vim.keymap.set("n", "gb", "<Plug>(VM-Find-Under)")
+vim.keymap.set("x", "gb", "<Plug>(VM-Find-Subword-Under)")
 
 -- Code Folding
 keymap("n", "<leader>}", "zc", opts)
