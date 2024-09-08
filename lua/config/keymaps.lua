@@ -22,7 +22,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     )
   end,
 })
-
 -- Modes
 -- normal_mode = "n",
 -- insert_mode = "i",
@@ -30,6 +29,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- visual_block_mode = "x",
 -- term_mode = "t",
 -- command_mode = "c"
+--
+
+-- copy to system clipboard
+keymap("v", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Copy to system clipboard" })
 
 -- Normal Mode Keymaps
 keymap("n", "<C-s>", ":w<CR>", opts) -- Save with Ctrl + S
