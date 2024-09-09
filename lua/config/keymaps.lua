@@ -35,6 +35,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- copy to system clipboard
 keymap("v", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Copy to system clipboard" })
 
+-- Comments
+vim.keymap.set("n", "<C-/>", "gcc", opts)
+vim.keymap.set("v", "<C-/>", "gc", opts)
+
 -- Normal Mode Keymaps
 keymap("n", "<C-s>", ":w<CR>", opts) -- Save with Ctrl + S
 
