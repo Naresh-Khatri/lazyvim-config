@@ -46,8 +46,7 @@ vim.keymap.set("n", "gb", "<Plug>(VM-Find-Under)")
 vim.keymap.set("x", "gb", "<Plug>(VM-Find-Subword-Under)")
 
 -- Code Folding
-keymap("n", "<leader>}", "zc", opts)
-keymap("n", "<leader>{", "zo", opts)
+keymap("n", "<C-f>", "za", opts)
 
 -- Close buffer
 keymap("n", "<C-w>", ":bd<cr>", opts)
