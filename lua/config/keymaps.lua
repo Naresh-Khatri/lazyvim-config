@@ -7,6 +7,11 @@
 -- Set options for key mappings
 local opts = { noremap = true, silent = true }
 
+-- Set options for key mappings WITH DESCRIPTION
+local function with_desc(description)
+  return vim.tbl_extend("force", opts, { desc = description })
+end
+
 -- Shortcut for setting keymaps
 local keymap = vim.api.nvim_set_keymap
 
@@ -56,3 +61,9 @@ keymap("n", "<C-f>", "za", opts)
 keymap("n", "<C-w>", ":bd<cr>", opts)
 
 keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+keymap(
+  "n",
+  "<leader><leader>",
+  "<cmd>Telescope buffers initial_mode=normal sort_mru=true sort_lastused=true<cr>",
+  with_desc("Recent buffers")
+)

@@ -21,6 +21,11 @@ return {
         theme = "dropdown",
       },
     })
+    opts.defaults.sorting_strategy = "ascending"
+    opts.defaults.buffers = {
+      sort_mru = true,
+      sort_lastused = true,
+    }
 
     -- Return the modified opts table
     return opts
