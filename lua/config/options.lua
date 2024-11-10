@@ -4,3 +4,4 @@
 --
 vim.opt.winbar = "%=%m %f"
 vim.opt.clipboard = ""
+vim.opt.inlay_hints.enabled = false
